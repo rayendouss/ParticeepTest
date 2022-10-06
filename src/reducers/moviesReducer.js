@@ -7,7 +7,7 @@ const initState={
 }
 
 export default function  moviesReducer  (state=initState,action){
-    console.log('action',action.payload)
+   
     
     switch (action.type){
       
@@ -16,7 +16,7 @@ export default function  moviesReducer  (state=initState,action){
           
                 return index.category
               })
-             console.log('categ',new Set(categ))
+   
             return{
                ...state,
                movies:  action.payload,

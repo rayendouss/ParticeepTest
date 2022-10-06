@@ -76,23 +76,23 @@ function App(props) {
   }
 
   const removeMovies =(id)=>{
-    console.log('id',id)
+    
     var filtered = props.movies.filter(function(value, index, arr){ 
       return value.id !== id;
   });
-  console.log('filtred',filtered)
+  
   dispatch({
     type: "ALL_MOVIES",
     payload: filtered,
   });
-  //setMovies(filtered)
+  setlisteMovies(filtered)
   }
   const handleChangeC = (event) => {
    
     const {
       target: { value },
     } = event;
-    console.log('value',value)
+    
     setcategorieName(
       // On autofill we get a stringified value.
       typeof value === 'string' ? value.split(',') : value,
@@ -100,7 +100,7 @@ function App(props) {
     if(value.length>0)
    { var filtered = props.movies.filter(function(values, index, arr){ 
       return value.includes(values.category) })
-      console.log('filtered',filtered)
+   
       setlisteMovies(filtered)}
       else {
         setlisteMovies(props.movies)
